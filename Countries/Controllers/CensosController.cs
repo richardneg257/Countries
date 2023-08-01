@@ -1,4 +1,4 @@
-using Countries.Models;
+using Countries.Models.Tarea1;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -10,10 +10,10 @@ public class CensosController : ControllerBase
     private readonly string _rutaCenso;
     public CensosController()
     {
-        _rutaCenso = @"D:\Data\censo2023.json";
+        _rutaCenso = @"D:\Proyecto .Net\DataCenso\censo2023.json";
     }
 
-    [HttpGet("mostrar-censo")]
+    [HttpGet("Tarea1")]
     public async Task<ActionResult<Censo>> GetCenso()
     {
         using(var sr = new StreamReader(_rutaCenso))

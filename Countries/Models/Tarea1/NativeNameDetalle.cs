@@ -1,4 +1,4 @@
-﻿namespace Countries.Models;
+﻿namespace Countries.Models.Tarea1;
 
 public class NativeNameDetalle
 {
