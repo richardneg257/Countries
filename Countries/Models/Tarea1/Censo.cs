@@ -8,5 +8,4 @@ public class Censo
     public List<Departamento> Departamentos { get; set; }
     public List<Provincia> Provincias { get; set; }
     public List<Distrito> Distritos { get; set; }
-
 }
