@@ -1,4 +1,5 @@
 using Countries.Models.Tarea_2;
+using Countries.Models.Tarea_3;
 using Countries.Models.Tarea1;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -11,7 +12,7 @@ public class CensosController : ControllerBase
     private readonly string _rutaCenso;
     public CensosController()
     {
-        _rutaCenso = @"E:\repos\JavaScript\censo2023.json";
+        _rutaCenso = @"D:\Proyecto .Net\DataCenso\censo2023.json";
     }
 
     [HttpGet("Tarea1")]
@@ -37,6 +38,18 @@ public class CensosController : ControllerBase
             var censoResultado = JsonConvert.DeserializeObject<ListLanguages>(jsonString);
 
             return censoResultado;
+        }
+    }
+
+    [HttpGet("Tarea-3")]
+
+    public async Task<ActionResult<Department>> ListasDepartamentos()
+    {
+        using (var sr = new StreamReader(_rutaCenso))
+        {
+            string jsonString = sr.ReadToEnd();
+            var departamentoResultado = JsonConvert.DeserializeObject<Department>(jsonString);
+            return departamentoResultado;
         }
     }
 }
